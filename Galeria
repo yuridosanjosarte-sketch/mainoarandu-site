@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria Cultural - Tupi-Guarani</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #fdfaf7; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    
+    .gallery-item img { transition: transform 0.5s ease; }
+    .gallery-item:hover img { transform: scale(1.1); }
+    
+    /* Efeito suave de entrada */
+    .fade-in { animation: fadeIn 1s ease-out forwards; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Cores das redes sociais no rodapé */
+    .icon-social { font-size: 24px; color: #9ca3af; transition: 0.3s; }
+    .fa-instagram:hover { color: #d6249f; }
+    .fa-youtube:hover { color: #FF0000; }
+    .fa-facebook:hover { color: #1877F2; }
+    .fa-pinterest:hover { color: #E60023; }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <header class="bg-white/90 backdrop-blur sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <a href="index.html" class="text-xl md:text-2xl font-bold text-[#6b5440]">Tupi-Guarani</a>
+      <nav class="space-x-4 md:space-x-8 text-gray-700 font-medium text-sm md:text-base">
+        <a href="index.html#inicio" class="hover:text-[#b08e6b] transition">Início</a>
+        <a href="index.html#materiais" class="hover:text-[#b08e6b] transition">Arquivos</a>
+        <a href="galeria.html" class="text-[#b08e6b] font-bold border-b-2 border-[#b08e6b]">Galeria</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="py-12 md:py-20 bg-[#f5e1ce]/30 text-center px-4">
+    <div class="max-w-4xl mx-auto fade-in">
+      <h2 class="text-3xl md:text-5xl font-bold text-[#6b5440] mb-4">Saberes na Prática</h2>
+      <p class="text-lg text-gray-600">Explore como a cultura Tupi-Guarani ganha vida através de jogos, artes e vivências educativas.</p>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <h3 class="text-2xl font-bold text-[#6b5440] mb-8 flex items-center gap-2">
+      <i class="fas fa-camera-retro"></i> Vivências e Materiais
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      
+      <div class="gallery-item relative overflow-hidden rounded-2xl shadow-md bg-white">
+        <img src="foto1.jpg" alt="Atividade prática" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <p class="text-sm font-semibold text-[#8c6f52]">Oficina de Grafismos</p>
+          <p class="text-xs text-gray-500">Alunos aplicando técnicas ancestrais.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item relative overflow-hidden rounded-2xl shadow-md bg-white">
+        <img src="foto2.jpg" alt="Materiais didáticos" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <p class="text-sm font-semibold text-[#8c6f52]">Materiais Impressos</p>
+          <p class="text-xs text-gray-500">O vocabulário sendo usado em sala de aula.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item relative overflow-hidden rounded-2xl shadow-md bg-white">
+        <img src="foto3.jpg" alt="Artesanato" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <p class="text-sm font-semibold text-[#8c6f52]">Cultura Viva</p>
+          <p class="text-xs text-gray-500">Exposição de artes e artefatos.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bg-[#8c6f52] py-16 px-6 text-white">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center italic">"Ouvir as histórias é manter a chama acesa"</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl border-4 border-[#b08e6b]">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h4 class="text-2xl font-bold mb-4">Contação de Histórias</h4>
+          <p class="text-[#e8c39e] leading-relaxed mb-6">
+            Neste vídeo, exploramos a narrativa de Aramirim, trazendo a pronúncia correta dos termos Tupi-Guarani e a magia das lendas da floresta.
+          </p>
+          <ul class="space-y-3 text-sm">
+            <li><i class="fas fa-check-circle mr-2"></i> Tradução simultânea</li>
+            <li><i class="fas fa-check-circle mr-2"></i> Elementos visuais lúdicos</li>
+            <li><i class="fas fa-check-circle mr-2"></i> Foco em educadores</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-bold text-[#6b5440]">Jogos e Brincadeiras</h3>
+      <p class="text-gray-600 mt-2">Aprender brincando é a base da pedagogia indígena.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <div class="flex flex-col md:flex-row bg-white rounded-3xl p-6 shadow-sm border border-[#f5e1ce] hover:border-[#b08e6b] transition">
+        <div class="bg-[#f5e1ce] text-[#6b5440] w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-4 md:mb-0 md:mr-6 shrink-0">
+          <i class="fas fa-feather-alt"></i>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-[#6b5440]">Peteca (Pe'teka)</h4>
+          <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+            Muito mais que um esporte, a peteca ensina coordenação e ritmo. Na tradição, era feita com palha de milho e penas. **Como jogar:** O objetivo é não deixar cair, usando apenas a palma da mão.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row bg-white rounded-3xl p-6 shadow-sm border border-[#f5e1ce] hover:border-[#b08e6b] transition">
+        <div class="bg-[#f5e1ce] text-[#6b5440] w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-4 md:mb-0 md:mr-6 shrink-0">
+          <i class="fas fa-running"></i>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-[#6b5440]">Corrida do Saci</h4>
+          <p class="text-gray-600 text-sm mt-2 leading-relaxed">
+            Uma brincadeira que testa o equilíbrio e a resistência física. **Como jogar:** Os participantes devem correr em um pé só por uma distância determinada. Quem tocar o segundo pé no chão volta ao início.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-400 text-center py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-white text-xl font-bold mb-6">Tupi-Guarani</h2>
+      
+      <div class="flex justify-center gap-6 mb-8">
+          <a href="#" target="_blank" class="icon-social"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank" class="icon-social"><i class="fab fa-youtube"></i></a>
+          <a href="#" target="_blank" class="icon-social"><i class="fab fa-facebook"></i></a>
+          <a href="#" target="_blank" class="icon-social"><i class="fab fa-pinterest"></i></a>
+      </div>
+
+      <p class="text-xs border-t border-gray-800 pt-8">© 2026 Mainoarandu • Feito com respeito e propósito</p>
+    </div>
+  </footer>
+
+</body>
+</html>
