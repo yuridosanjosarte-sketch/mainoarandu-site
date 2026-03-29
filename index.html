@@ -52,22 +52,38 @@
     .fa-youtube:hover { color: #FF0000; }
     .fa-facebook:hover { color: #1877F2; }
     .fa-pinterest:hover { color: #E60023; }
+
+    /* Efeito de "desmanchar" o botão ao clicar */
+.btn-galeria {
+    transition: all 0.5s ease-out;
+}
+
+/* Efeito de desmanchar/sumir ao clicar */
+.btn-galeria:active {
+    transform: scale(1.4); /* Ele cresce rapidamente */
+    opacity: 0;            /* Ele fica invisível */
+    filter: blur(10px);    /* Ele fica embaçado como se estivesse sumindo */
+    transition: 0.4s;      /* Velocidade do sumiço */
+}
+    
   </style>
 </head>
 <body class="bg-gradient-to-b from-[#f5e1ce] to-[#ffffff] text-gray-800">
 
   <header class="bg-white/80 backdrop-blur sticky top-0 z-50 shadow-sm">
-    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl md:text-2xl font-bold text-[#6b5440]">Tupi-Guarani</h1>
-      <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
-        <a href="#inicio" class="hover:text-[#b08e6b] transition">Início</a>
-        <a href="#materiais" class="hover:text-[#b08e6b] transition">Arquivos</a>
-        <a href="#sobre" class="hover:text-[#b08e6b] transition">Galeria</a>
-      </nav>
-      <button class="bg-[#b08e6b] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#8c6f52] transition">
+<div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <h1 class="text-xl md:text-2xl font-bold text-[#6b5440]">Tupi-Guarani</h1>
+    
+    <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+        <a href="index.html#inicio" class="hover:text-[#b08e6b] transition">Início</a>
+        <a href="index.html#materiais" class="hover:text-[#b08e6b] transition">Arquivos</a>
+        <a href="galeria.html" class="btn-galeria hover:text-[#b08e6b] transition font-bold border-b-2 border-[#b08e6b]">Galeria</a>
+    </nav>
+
+    <a href="https://wa.me/SEUNUMERO" target="_blank" class="bg-[#b08e6b] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-[#8c6f52] transition shadow-md">
         Contato
-      </button>
-    </div>
+    </a>
+</div>
   </header>
 
   <section id="inicio" class="relative text-center py-24 md:py-32 px-4 bg-cover bg-center flex items-center justify-center min-h-[70vh]" style="background-image: url('capaeu.jpeg');">
@@ -79,9 +95,9 @@
       <p class="mt-6 text-lg md:text-xl text-gray-100 drop-shadow-md">
         Um espaço dedicado a educadores e multiplicadores da cultura do povo Tupi-Guarani.
       </p>
-      <a href="#sobre" class="inline-block mt-8 bg-[#b08e6b] hover:bg-[#8c6f52] text-white px-8 py-3 rounded-full shadow-xl transition transform hover:scale-105">
-        Conheça nossa missão
-      </a>
+     <a href="galeria.html" class="btn-galeria inline-block mt-8 bg-[#b08e6b] hover:bg-[#8c6f52] text-white px-8 py-3 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider">
+  Explorar Galeria na Prática
+</a>
     </div>
   </section>
 
