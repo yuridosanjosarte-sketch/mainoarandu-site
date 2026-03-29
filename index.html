@@ -6,7 +6,7 @@
   <title>Portal Educativo Tupi-Guarani</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
@@ -21,7 +21,7 @@
 
     .reveal { opacity: 0; transform: translateY(40px); transition: all 1s ease; }
     .reveal.active { opacity: 1; transform: translateY(0); }
-    
+
     .hero-overlay { background: rgba(0, 0, 0, 0.4); }
 
     /* Estilos das Redes Sociais */
@@ -65,30 +65,24 @@
     filter: blur(10px);    /* Ele fica embaçado como se estivesse sumindo */
     transition: 0.4s;      /* Velocidade do sumiço */
 }
-    
+
   </style>
 </head>
 <body class="bg-gradient-to-b from-[#f5e1ce] to-[#ffffff] text-gray-800">
 
-<header class="bg-white/95 backdrop-blur absolute top-0 z-50 shadow-sm border-b border-gray-100">
-    <div class="max-w-6xl mx-auto p-4 md:p-6">
 <header class="absolute top-0 left-0 w-full z-50 bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-6 py-4 md:py-6">
 
-        <div class="grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-6">
         <div class="grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-4">
 
             <div class="hidden md:block"></div>
 
-            <div class="flex justify-center order-1 md:order-2">
             <div class="flex justify-center">
                 <a href="index.html">
                     <img src="mainologo.jpeg" alt="Logo Mainoarandu" class="h-20 md:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105">
                 </a>
             </div>
 
-            <div class="flex justify-center md:justify-end order-2 md:order-3">
-                <a href="sobre-idealizadora.html" class="bg-[#f5e1ce] text-[#6b5440] px-6 py-3 rounded-full text-sm font-bold hover:bg-[#b08e6b] hover:text-white transition shadow-sm whitespace-nowrap">
             <div class="flex justify-center md:justify-end">
                 <a href="sobre-idealizadora.html" class="bg-[#f5e1ce] text-[#6b5440] px-6 py-3 rounded-full text-sm font-bold hover:bg-[#b08e6b] hover:text-white transition shadow-md whitespace-nowrap">
                     Sobre a Idealizadora
@@ -101,6 +95,7 @@
 </header>
 
 <section id="inicio" class="relative text-center py-24 md:py-32 px-4 bg-cover bg-center flex items-center justify-center min-h-[70vh]" style="background-image: url('capaeu.jpeg');">
+<section id="inicio" class="relative text-center bg-cover bg-center flex items-center justify-center min-h-[70vh]" style="background-image: url('capaeu.jpeg');">
     <div class="absolute inset-0 bg-black/30"></div> 
     <div class="relative max-w-3xl mx-auto fade-up text-white">
       <h2 class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg">
@@ -109,10 +104,21 @@
       <p class="mt-6 text-lg md:text-xl text-gray-100 drop-shadow-md">
         Um espaço dedicado a educadores e multiplicadores da cultura do povo Tupi-Guarani.
       </p>
-
+      
       <a href="galeria.html" class="btn-galeria inline-block mt-8 bg-[#b08e6b] hover:bg-[#8c6f52] text-white px-8 py-3 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider">
         Explorar Galeria na Prática
       </a>
+    
+    <div class="relative max-w-3xl mx-auto fade-up text-white pt-32">
+        <h2 class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg">
+            Preservando a identidade indígena por meio da educação
+        </h2>
+        <p class="mt-6 text-lg md:text-xl text-gray-100 drop-shadow-md">
+            Um espaço dedicado a educadores e multiplicadores da cultura do povo Tupi-Guarani.
+        </p>
+        <a href="galeria.html" class="btn-galeria inline-block mt-12 bg-[#b08e6b] hover:bg-[#8c6f52] text-white px-8 py-3 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider">
+            Explorar Galeria na Prática
+        </a>
     </div>
 </section>
 
@@ -132,22 +138,6 @@
       </div>
     </div>
   </section>
-
-  <section id="inicio" class="relative text-center py-24 md:py-32 px-4 bg-cover bg-center flex items-center justify-center min-h-[70vh]" style="background-image: url('capaeu.jpeg');">
-    <div class="absolute inset-0 bg-black/30"></div> 
-    <div class="relative max-w-3xl mx-auto fade-up text-white">
-      <h2 class="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg">
-        Preservando a identidade indígena por meio da educação
-      </h2>
-      <p class="mt-6 text-lg md:text-xl text-gray-100 drop-shadow-md">
-        Um espaço dedicado a educadores e multiplicadores da cultura do povo Tupi-Guarani.
-      </p>
-      
-      <a href="galeria.html" class="btn-galeria inline-block mt-8 bg-[#b08e6b] hover:bg-[#8c6f52] text-white px-8 py-3 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider">
-        Explorar Galeria na Prática
-      </a>
-    </div>
-</section>
 
   <section id="materiais" class="max-w-6xl mx-auto px-6 py-12">
     <div class="text-center mb-12">
@@ -233,7 +223,7 @@
   <footer class="bg-gray-900 text-gray-400 text-center py-10">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-white text-xl font-bold mb-4">Tupi-Guarani</h2>
-      
+
       <div class="social-container">
           <a href="https://instagram.com/seuusuario" target="_blank" class="icon-social"><i class="fab fa-instagram"></i></a>
           <a href="https://youtube.com/seucanal" target="_blank" class="icon-social"><i class="fab fa-youtube"></i></a>
