@@ -254,53 +254,73 @@
     </div>
   </footer>
 
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
+ <script>
+  const reveals = document.querySelectorAll('.reveal');
 
-    function revealOnScroll() {
-      const windowHeight = window.innerHeight;
-      reveals.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 100) {
-          el.classList.add('active');
-        }
-      });
-    }
+  function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+    reveals.forEach(el => {
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  }
 
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-  </script>
+  window.addEventListener('scroll', revealOnScroll);
 
+  // chama direto
+  revealOnScroll();
+</script>
+  
 <script>
-const botao = document.getElementById("btnGaleria");
-const texto = document.getElementById("textoGaleria");
+document.addEventListener("DOMContentLoaded", function() {
 
-botao.addEventListener("click", function(e) {
-  e.preventDefault(); // impede ir direto pra galeria
+  const botao = document.getElementById("btnGaleria");
+  const texto = document.getElementById("textoGaleria");
 
-  const destino = this.getAttribute("href");
+  if (!botao || !texto) return;
 
-  // separa letra por letra
-  const letras = texto.innerText.split("");
-  texto.innerHTML = "";
+  // garante que sempre inicia correto
+  restaurarBotao();
 
-  letras.forEach((letra, i) => {
-    const span = document.createElement("span");
-    span.innerText = letra;
-    texto.appendChild(span);
+  botao.addEventListener("click", function(e) {
+    e.preventDefault();
 
-    // animação com delay
+    const destino = this.getAttribute("href");
+
+    const letras = texto.innerText.split("");
+    texto.innerHTML = "";
+
+    letras.forEach((letra, i) => {
+      const span = document.createElement("span");
+      span.innerText = letra;
+      texto.appendChild(span);
+
+      setTimeout(() => {
+        span.classList.add("letra-sumir");
+      }, i * 40);
+    });
+
+    const tempoTotal = letras.length * 40 + 600;
+
     setTimeout(() => {
-      span.classList.add("letra-sumir");
-    }, i * 40); // velocidade do efeito
+      window.location.href = destino;
+    }, tempoTotal);
   });
 
-  // tempo total antes de redirecionar
-  const tempoTotal = letras.length * 40 + 600;
+  function restaurarBotao() {
+    botao.classList.remove("btn-destruir");
+    texto.textContent = "Explorar Galeria Cultural";
+    botao.style.opacity = "1";
+  }
 
-  setTimeout(() => {
-    window.location.href = destino;
-  }, tempoTotal);
+  window.addEventListener("pageshow", function(event) {
+    if (event.persisted) {
+      restaurarBotao();
+    }
+  });
+
 });
 </script>
   
