@@ -71,6 +71,19 @@
     background-position: 20% center;
   }
 }
+
+/* Container das letras */
+#textoGaleria span {
+  display: inline-block;
+  transition: all 0.5s ease;
+}
+
+/* Animação de desfragmentar */
+.letra-sumir {
+  opacity: 0;
+  transform: translateY(-40px) rotate(20deg) scale(1.5);
+  filter: blur(6px);
+}
     
   </style>
 </head>
@@ -109,9 +122,9 @@
         cultura do povo Tupi-Guarani.
       </p>
 
-      <a href="galeria.html" class="btn-galeria inline-block mt-8 bg-[#b08e6b] hover:bg-[#8c6f52] text-white px-8 py-3 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider">
-        Explorar Galeria Cultural
-      </a>
+      <a href="galeria.html" id="btnGaleria" class="btn-galeria inline-block mt-8 bg-[#b08e6b] hover:bg-[#8c6f52] text-white px-8 py-3 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider">
+  <span id="textoGaleria">Explorar Galeria Cultural</span>
+</a>
     </div>
 </section>
 
@@ -259,5 +272,38 @@
     window.addEventListener('load', revealOnScroll);
   </script>
 
+<script>
+const botao = document.getElementById("btnGaleria");
+const texto = document.getElementById("textoGaleria");
+
+botao.addEventListener("click", function(e) {
+  e.preventDefault(); // impede ir direto pra galeria
+
+  const destino = this.getAttribute("href");
+
+  // separa letra por letra
+  const letras = texto.innerText.split("");
+  texto.innerHTML = "";
+
+  letras.forEach((letra, i) => {
+    const span = document.createElement("span");
+    span.innerText = letra;
+    texto.appendChild(span);
+
+    // animação com delay
+    setTimeout(() => {
+      span.classList.add("letra-sumir");
+    }, i * 40); // velocidade do efeito
+  });
+
+  // tempo total antes de redirecionar
+  const tempoTotal = letras.length * 40 + 600;
+
+  setTimeout(() => {
+    window.location.href = destino;
+  }, tempoTotal);
+});
+</script>
+  
 </body>
 </html>
