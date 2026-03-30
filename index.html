@@ -72,19 +72,43 @@
   }
 }
 
-/* Container das letras */
+/* Letras individuais */
 #textoGaleria span {
   display: inline-block;
-  transition: all 0.5s ease;
+  transition: all 0.7s cubic-bezier(.2,.8,.2,1);
 }
 
-/* Animação de desfragmentar */
+/* Letras voando */
 .letra-sumir {
   opacity: 0;
-  transform: translateY(-40px) rotate(20deg) scale(1.5);
+  transform: 
+    translate(var(--x), var(--y))
+    rotate(var(--r))
+    scale(0.5);
   filter: blur(6px);
 }
-    
+
+/* Botão desintegrando */
+.btn-destruir {
+  animation: explodirBotao 0.7s forwards;
+}
+
+@keyframes explodirBotao {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+  50% {
+    transform: scale(1.3);
+    filter: blur(4px);
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+    filter: blur(10px);
+  }
+} 
   </style>
 </head>
 <body class="bg-gradient-to-b from-[#f5e1ce] to-[#ffffff] text-gray-800">
@@ -277,27 +301,39 @@ const botao = document.getElementById("btnGaleria");
 const texto = document.getElementById("textoGaleria");
 
 botao.addEventListener("click", function(e) {
-  e.preventDefault(); // impede ir direto pra galeria
+  e.preventDefault();
 
   const destino = this.getAttribute("href");
 
-  // separa letra por letra
   const letras = texto.innerText.split("");
   texto.innerHTML = "";
 
   letras.forEach((letra, i) => {
     const span = document.createElement("span");
     span.innerText = letra;
+
+    // valores aleatórios
+    const x = (Math.random() - 0.5) * 300 + "px";
+    const y = (Math.random() - 0.5) * 200 + "px";
+    const r = (Math.random() - 0.5) * 720 + "deg";
+
+    span.style.setProperty("--x", x);
+    span.style.setProperty("--y", y);
+    span.style.setProperty("--r", r);
+
     texto.appendChild(span);
 
-    // animação com delay
     setTimeout(() => {
       span.classList.add("letra-sumir");
-    }, i * 40); // velocidade do efeito
+    }, i * 30);
   });
 
-  // tempo total antes de redirecionar
-  const tempoTotal = letras.length * 40 + 600;
+  // ativa destruição do botão junto
+  setTimeout(() => {
+    botao.classList.add("btn-destruir");
+  }, 100);
+
+  const tempoTotal = letras.length * 30 + 800;
 
   setTimeout(() => {
     window.location.href = destino;
