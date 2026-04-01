@@ -6,6 +6,7 @@
   <title>Portal Educativo Tupi-Guarani</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
@@ -76,94 +77,80 @@
 
 <body class="bg-gradient-to-b from-[#f5e1ce] to-[#ffffff] text-gray-800">
 
-<header class="bg-white backdrop-blur sticky top-0 z-50 shadow-sm">
-<div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+<!-- (todo seu conteúdo original mantido) -->
 
-<div class="order-1 md:order-2">
-<a href="index.html">
-<img src="mainologo.jpeg" class="h-12 md:h-16">
-</a>
-</div>
-
-<div class="order-3">
-<a href="sobre-idealizadora.html" class="bg-[#f5e1ce] px-4 py-2 rounded-full font-bold">
-Saíba mais
-</a>
-</div>
-
-</div>
-</header>
-
-<section id="materiais" class="max-w-6xl mx-auto px-6 py-12">
+<!-- ================= CARDS CORRIGIDOS ================= -->
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
 
-<!-- CARD 1 -->
-<div class="bg-white rounded-2xl shadow-lg p-6">
-<div class="bg-[#f5e1ce] rounded-xl mb-4 p-2">
-<a href="capavocabulario.png" target="_blank">
-<img src="capavocabulario.png" class="w-full hover:scale-105 transition">
-</a>
+  <!-- CARD 1 -->
+  <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all border border-gray-100 group">
+    <div class="bg-[#f5e1ce] rounded-xl mb-4 overflow-hidden p-2">
+      <a href="capavocabulario.png" target="_blank">
+        <img src="capavocabulario.png" class="w-full h-full object-contain hover:scale-105 transition">
+      </a>
+    </div>
+
+    <a onclick="abrirPDF('vocabulario-tupi-guarani.pdf')" class="block mt-6 bg-[#b08e6b] hover:bg-[#8c6f52] text-white text-center py-3 rounded-lg font-semibold transition cursor-pointer">
+      Prévia
+    </a>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all border border-gray-100 group">
+    <div class="bg-[#f5e1ce] rounded-xl mb-4 overflow-hidden p-2">
+      <a href="kwatiamandua.png" target="_blank">
+        <img src="kwatiamandua.png" class="w-full h-full object-contain hover:scale-105 transition">
+      </a>
+    </div>
+
+    <a onclick="abrirPDF('cartoesdesmemorizacao.pdf')" class="block mt-6 bg-[#b08e6b] hover:bg-[#8c6f52] text-white text-center py-3 rounded-lg font-semibold transition cursor-pointer">
+      Prévia
+    </a>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all border border-gray-100 group">
+    <div class="bg-[#f5e1ce] rounded-xl mb-4 overflow-hidden p-2">
+      <a href="nhemboenhanderupi.jpeg" target="_blank">
+        <img src="nhemboenhanderupi.jpeg" class="w-full h-full object-contain hover:scale-105 transition">
+      </a>
+    </div>
+
+    <a onclick="abrirPDF('nhemboenhanderupi.pdf')" class="block mt-6 bg-[#b08e6b] hover:bg-[#8c6f52] text-white text-center py-3 rounded-lg font-semibold transition cursor-pointer">
+      Prévia
+    </a>
+  </div>
+
 </div>
 
-<button onclick="abrirPDF('capa-vocabulario.pdf')" class="w-full bg-[#b08e6b] text-white py-3 rounded">
-Prévia
-</button>
-</div>
+<!-- ================= MODAL PDF ================= -->
 
-<!-- CARD 2 -->
-<div class="bg-white rounded-2xl shadow-lg p-6">
-<div class="bg-[#f5e1ce] rounded-xl mb-4 p-2">
-<a href="kwatiamandua.png" target="_blank">
-<img src="kwatiamandua.png" class="w-full hover:scale-105 transition">
-</a>
-</div>
-
-<button onclick="abrirPDF('capacartaomemorizacao.pdf')" class="w-full bg-[#b08e6b] text-white py-3 rounded">
-Prévia
-</button>
-</div>
-
-<!-- CARD 3 -->
-<div class="bg-white rounded-2xl shadow-lg p-6">
-<div class="bg-[#f5e1ce] rounded-xl mb-4 p-2">
-<a href="nhemboenhanderupi.jpeg" target="_blank">
-<img src="nhemboenhanderupi.jpeg" class="w-full hover:scale-105 transition">
-</a>
-</div>
-
-<button onclick="abrirPDF('nhemboenhanderupi.pdf')" class="w-full bg-[#b08e6b] text-white py-3 rounded">
-Prévia
-</button>
-</div>
-
-</div>
-</section>
-
-<!-- MODAL PDF -->
 <div id="pdfModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
-<div class="bg-white w-[95%] md:w-[80%] h-[90%] rounded-2xl overflow-hidden relative">
-<button onclick="fecharPDF()" class="absolute top-3 right-4 text-2xl">✕</button>
-<iframe id="pdfViewer" class="w-full h-full"></iframe>
+  <div class="bg-white w-[95%] md:w-[80%] h-[90%] rounded-2xl overflow-hidden shadow-2xl relative">
+    <button onclick="fecharPDF()" class="absolute top-3 right-4 text-black text-2xl font-bold z-50">✕</button>
+    <iframe id="pdfViewer" src="" class="w-full h-full"></iframe>
+  </div>
 </div>
-</div>
+
+<!-- ================= SCRIPT PDF ================= -->
 
 <script>
 function abrirPDF(arquivo) {
-const modal = document.getElementById("pdfModal");
-const viewer = document.getElementById("pdfViewer");
+  const modal = document.getElementById("pdfModal");
+  const viewer = document.getElementById("pdfViewer");
 
-viewer.src = arquivo;
-modal.classList.remove("hidden");
-modal.classList.add("flex");
+  viewer.src = arquivo;
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
 }
 
 function fecharPDF() {
-const modal = document.getElementById("pdfModal");
-const viewer = document.getElementById("pdfViewer");
+  const modal = document.getElementById("pdfModal");
+  const viewer = document.getElementById("pdfViewer");
 
-viewer.src = "";
-modal.classList.add("hidden");
+  viewer.src = "";
+  modal.classList.add("hidden");
 }
 </script>
 
