@@ -20,6 +20,7 @@
 
     .fade-imagem {
       animation: fadeSuave 2s ease-out forwards;
+      will-change: transform, opacity;
     }
 
     .fade-texto {
@@ -28,6 +29,11 @@
 
     body {
       background: linear-gradient(135deg, #fdf8f3 0%, #f8efe6 100%);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(14px);
     }
   </style>
 </head>
@@ -55,35 +61,38 @@
   <!-- Conteúdo -->
   <main class="max-w-6xl mx-auto px-6 py-20">
 
-    <section class="bg-white/90 backdrop-blur-md rounded-[2rem] shadow-2xl p-8 md:p-14 border border-white">
+    <section class="glass-card rounded-[2rem] shadow-2xl p-8 md:p-14 border border-white">
 
       <!-- Título -->
       <div class="text-center mb-14">
         <p class="uppercase tracking-[0.35em] text-sm text-[#b08e6b] mb-3">
           Apresentação
         </p>
+
         <h1 class="text-5xl md:text-6xl font-light leading-tight">
           Sobre a Idealizadora
         </h1>
+
         <div class="w-24 h-[2px] bg-[#d8b28c] mx-auto mt-5"></div>
       </div>
 
-      <!-- Grid principal -->
+      <!-- Conteúdo principal -->
       <div class="grid md:grid-cols-2 gap-14 items-center">
 
-        <!-- Imagem -->
+        <!-- Imagem com fade + parallax -->
         <div class="fade-imagem" id="parallax-container">
-  <div class="rounded-[2rem] overflow-hidden shadow-2xl border border-white bg-white p-3">
-    <img 
-      id="imagem-parallax"
-      src="capaeu.jpeg" 
-      alt="Ana Léia Djrôdya Ferraz dos Anjos"
-      class="w-full h-auto rounded-[1.5rem] object-contain transition duration-700 hover:scale-[1.02]"
-    >
-  </div>
-</div>
+          <div class="rounded-[2rem] overflow-hidden shadow-2xl border border-white bg-white p-3">
+            <img 
+              id="imagem-parallax"
+              src="capaeu.jpeg" 
+              alt="Ana Léia Djrôdya Ferraz dos Anjos"
+              class="w-full h-auto rounded-[1.5rem] object-contain transition duration-700 hover:scale-[1.02]"
+            >
+          </div>
+        </div>
 
-       
+        <!-- Texto -->
+        <div class="fade-texto">
           <h2 class="text-4xl font-light leading-tight mb-6">
             Ana Léia Djrôdya Ferraz dos Anjos
           </h2>
@@ -97,7 +106,7 @@
           <p class="leading-9 text-lg text-[#7a6450] mt-6">
             Sua visão para esta galeria nasce do desejo de criar um espaço
             onde memória, identidade e expressão artística dialoguem de forma
-            sensível e contemporânea.
+            sensível, acolhedora e contemporânea.
           </p>
 
           <p class="leading-9 text-lg text-[#7a6450] mt-6">
@@ -118,14 +127,15 @@
 
   </main>
 
-<script>
-  window.addEventListener("scroll", function () {
-    const imagem = document.getElementById("imagem-parallax");
-    const scrollY = window.scrollY;
+  <!-- Parallax suave -->
+  <script>
+    window.addEventListener("scroll", function () {
+      const imagem = document.getElementById("imagem-parallax");
+      const scrollY = window.scrollY;
 
-    imagem.style.transform = `translateY(${scrollY * 0.08}px) scale(1.01)`;
-  });
-</script>
-  
+      imagem.style.transform = `translateY(${scrollY * 0.04}px) scale(1.01)`;
+    });
+  </script>
+
 </body>
 </html>
