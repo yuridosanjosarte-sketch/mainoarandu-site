@@ -10,91 +10,116 @@
     @keyframes fadeSuave {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px) scale(0.98);
       }
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
     }
 
     .fade-imagem {
       animation: fadeSuave 2s ease-out forwards;
     }
+
+    .fade-texto {
+      animation: fadeSuave 2.4s ease-out forwards;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fdf8f3 0%, #f8efe6 100%);
+    }
   </style>
 </head>
 
-<body class="bg-[#fdf8f3] text-[#6b5440]">
+<body class="text-[#6b5440] min-h-screen">
 
-  <!-- Cabeçalho -->
-  <header class="w-full py-6 px-8 shadow-sm bg-white">
+  <!-- Header elegante -->
+  <header class="w-full py-6 px-8 backdrop-blur-md bg-white/80 shadow-sm sticky top-0 z-50">
     <nav class="max-w-6xl mx-auto flex justify-between items-center">
-      
+
       <!-- Logo -->
       <img 
         src="mainologo.jpeg" 
         alt="Logo da Galeria"
-        class="h-16 w-auto"
+        class="h-16 w-auto transition duration-500 hover:scale-105"
       >
 
       <!-- Botão voltar -->
-      <a href="galeria.html" class="bg-[#f5e1ce] px-4 py-2 rounded-full text-sm font-bold hover:bg-[#b08e6b] hover:text-white transition">
+      <a href="galeria.html" class="px-5 py-2 rounded-full text-sm font-semibold border border-[#d6b99d] bg-white hover:bg-[#b08e6b] hover:text-white transition duration-300 shadow-sm">
         Voltar à galeria
       </a>
     </nav>
   </header>
 
-  <!-- Conteúdo principal -->
-  <main class="max-w-5xl mx-auto px-6 py-16">
-    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+  <!-- Conteúdo -->
+  <main class="max-w-6xl mx-auto px-6 py-20">
 
-      <h2 class="text-4xl font-bold text-center mb-10">
-        Sobre a Idealizadora
-      </h2>
+    <section class="bg-white/90 backdrop-blur-md rounded-[2rem] shadow-2xl p-8 md:p-14 border border-white">
 
-      <div class="grid md:grid-cols-2 gap-10 items-center">
+      <!-- Título -->
+      <div class="text-center mb-14">
+        <p class="uppercase tracking-[0.35em] text-sm text-[#b08e6b] mb-3">
+          Apresentação
+        </p>
+        <h1 class="text-5xl md:text-6xl font-light leading-tight">
+          Sobre a Idealizadora
+        </h1>
+        <div class="w-24 h-[2px] bg-[#d8b28c] mx-auto mt-5"></div>
+      </div>
 
-        <!-- Foto -->
-        <div class="rounded-3xl overflow-hidden shadow-lg border-4 border-white">
-          <img 
-            src="capaeu.jpeg" 
-            alt="Ana Léia Djrôdya Ferraz dos Anjos"
-            class="w-full h-auto object-contain fade-imagem"
-          >
+      <!-- Grid principal -->
+      <div class="grid md:grid-cols-2 gap-14 items-center">
+
+        <!-- Imagem -->
+        <div class="fade-imagem">
+          <div class="rounded-[2rem] overflow-hidden shadow-2xl border border-white bg-white p-3">
+            <img 
+              src="capaeu.jpeg" 
+              alt="Ana Léia Djrôdya Ferraz dos Anjos"
+              class="w-full h-auto rounded-[1.5rem] object-contain transition duration-700 hover:scale-[1.02]"
+            >
+          </div>
         </div>
 
         <!-- Texto -->
-        <div>
-          <h3 class="text-2xl font-semibold mb-4">
+        <div class="fade-texto">
+          <p class="uppercase tracking-[0.25em] text-sm text-[#b08e6b] mb-3">
+            Idealizadora
+          </p>
+
+          <h2 class="text-4xl font-light leading-tight mb-6">
             Ana Léia Djrôdya Ferraz dos Anjos
-          </h3>
+          </h2>
 
-          <p class="leading-8 text-lg">
-            Ana Léia Djrôdya Ferraz dos Anjos nasceu em 
-            <strong>21 de janeiro de 1999</strong>, na cidade de 
-            <strong>Peruíbe - SP</strong>.
+          <p class="leading-9 text-lg text-[#7a6450]">
+            Nascida em <strong>21 de janeiro de 1999</strong>, na cidade de 
+            <strong>Peruíbe - SP</strong>, Ana Léia constrói sua trajetória
+            a partir do profundo respeito pela arte, cultura e ancestralidade.
           </p>
 
-          <p class="leading-8 text-lg mt-4">
-            Idealizadora desta galeria, seu trabalho nasce do desejo 
-            de valorizar a arte, a cultura e as raízes que conectam 
-            memória, identidade e pertencimento.
+          <p class="leading-9 text-lg text-[#7a6450] mt-6">
+            Sua visão para esta galeria nasce do desejo de criar um espaço
+            onde memória, identidade e expressão artística dialoguem de forma
+            sensível e contemporânea.
           </p>
 
-          <p class="leading-8 text-lg mt-4">
-            Este espaço foi criado com carinho para reunir expressões 
-            culturais, histórias e elementos visuais que promovem 
-            reflexão, conhecimento e apreciação artística.
+          <p class="leading-9 text-lg text-[#7a6450] mt-6">
+            Mais do que um ambiente expositivo, este projeto representa um
+            lugar de pertencimento, contemplação e conexão entre passado,
+            presente e futuro.
           </p>
 
-          <p class="leading-8 text-lg mt-4">
-            Mais do que uma galeria, este projeto representa um lugar 
-            de encontro entre passado, presente e futuro.
-          </p>
+          <div class="mt-8 pt-6 border-t border-[#ead8c7]">
+            <p class="italic text-[#a88763] text-lg">
+              “A arte é memória viva e ponte entre gerações.”
+            </p>
+          </div>
         </div>
 
       </div>
-    </div>
+    </section>
+
   </main>
 
 </body>
