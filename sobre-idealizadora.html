@@ -5,7 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre a Idealizadora</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes fadeSuave {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-imagem {
+      animation: fadeSuave 2s ease-out forwards;
+    }
+  </style>
 </head>
+
 <body class="bg-[#fdf8f3] text-[#6b5440]">
 
   <!-- Cabeçalho -->
@@ -13,9 +31,9 @@
     <nav class="max-w-6xl mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold">Galeria Cultural</h1>
 
-     <a href="Galeria.html" class="bg-[#f5e1ce] px-4 py-2 rounded-full text-sm font-bold hover:bg-[#b08e6b] hover:text-white transition">
-  Voltar à galeria
-</a>
+      <a href="Galeria.html" class="bg-[#f5e1ce] px-4 py-2 rounded-full text-sm font-bold hover:bg-[#b08e6b] hover:text-white transition">
+        Voltar à galeria
+      </a>
     </nav>
   </header>
 
@@ -34,7 +52,7 @@
           <img 
             src="ana-leia.jpeg" 
             alt="Ana Léia Djrôdya Ferraz dos Anjos"
-            class="w-full h-auto object-contain"
+            class="w-full h-auto object-contain fade-imagem"
           >
         </div>
 
