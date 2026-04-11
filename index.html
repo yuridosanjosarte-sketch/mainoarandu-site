@@ -112,10 +112,10 @@
              class="h-12 md:h-16 w-auto object-contain">
 
         <video id="logoVideo"
-               src="mainolindinhovideo.mp4"
-               class="h-12 md:h-16 w-auto object-contain absolute inset-0 hidden"
-               playsinline>
-        </video>
+       src="mainolindinhovideo.mp4"
+       class="h-12 md:h-16 w-auto object-contain absolute inset-0 hidden"
+       playsinline>
+</video>
 
       </div>
     </div>
@@ -392,8 +392,13 @@ animando = true;
 
 e.preventDefault();
 
-logoImg.classList.add("hidden");
+// esconde imagem
+logoImg.style.opacity = "0";
+
+// mostra vídeo corretamente
 logoVideo.classList.remove("hidden");
+logoVideo.style.display = "block";
+logoVideo.style.opacity = "1";
 
 logoVideo.currentTime = 0;
 logoVideo.play();
