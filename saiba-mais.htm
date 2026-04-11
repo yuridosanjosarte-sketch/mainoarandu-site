@@ -73,11 +73,21 @@ z-index:9999;
 <header class="w-full bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
 <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
 
-<img src="mainolindinho.jpeg"
+<!-- LOGO CONTAINER -->
+<div id="logoContainer" class="h-14 md:h-16 w-auto">
+<img id="logoImg"
+src="mainolindinho.jpeg"
 class="h-14 md:h-16 w-auto object-contain hover:scale-105 transition duration-300">
 
+<video id="logoVideo"
+class="h-14 md:h-16 w-auto object-contain hidden"
+src="mainolindinhovideo.mp4"
+playsinline>
+</video>
+</div>
+
 <a href="index.html"
-class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
+class="nav-link inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
  Voltar ao Inicio
 </a>
 
@@ -136,7 +146,7 @@ Apoie a valorização da cultura indígena.
 Sua participação ajuda a produzir novos materiais didáticos e ampliar o alcance deste projeto educativo.
 </p>
 
-<button class="bg-[#B8860B] text-white px-4 py-2 rounded-full hover:scale-105 uppercase tracking-wider inline-block text-sm font-bold hover:bg-[#FFD700] transition shadow-sm">
+<button class="nav-link bg-[#B8860B] text-white px-4 py-2 rounded-full hover:scale-105 uppercase tracking-wider inline-block text-sm font-bold hover:bg-[#FFD700] transition shadow-sm">
 Apoie esse projeto
 </button>
 
@@ -153,10 +163,10 @@ Tupi-Guarani
 </h2>
 
 <div class="social-container">
-<a href="#" class="icon-social"><i class="fab fa-instagram"></i></a>
-<a href="#" class="icon-social"><i class="fab fa-youtube"></i></a>
-<a href="#" class="icon-social"><i class="fab fa-facebook"></i></a>
-<a href="#" class="icon-social"><i class="fab fa-pinterest"></i></a>
+<a href="#" class="icon-social nav-link"><i class="fab fa-instagram"></i></a>
+<a href="#" class="icon-social nav-link"><i class="fab fa-youtube"></i></a>
+<a href="#" class="icon-social nav-link"><i class="fab fa-facebook"></i></a>
+<a href="#" class="icon-social nav-link"><i class="fab fa-pinterest"></i></a>
 </div>
 
 <p class="text-sm mb-6 max-w-md mx-auto">
@@ -187,6 +197,33 @@ Este site possui recurso de acessibilidade em Libras.
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
 new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+<script>
+const links = document.querySelectorAll(".nav-link");
+const logoImg = document.getElementById("logoImg");
+const logoVideo = document.getElementById("logoVideo");
+
+links.forEach(link=>{
+link.addEventListener("click",function(e){
+
+const href = this.getAttribute("href");
+if(!href) return;
+
+e.preventDefault();
+
+logoImg.classList.add("hidden");
+logoVideo.classList.remove("hidden");
+
+logoVideo.currentTime = 0;
+logoVideo.play();
+
+logoVideo.onended = ()=>{
+window.location.href = href;
+};
+
+});
+});
 </script>
 
 </body>
