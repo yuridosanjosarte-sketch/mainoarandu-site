@@ -209,21 +209,25 @@ playsinline>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
 
-const container = document.getElementById("logoContainer");
+const btn = document.querySelector('a[href="galeria.html"]');
 const img = document.getElementById("logoImg");
 const video = document.getElementById("logoVideo");
 
-container.addEventListener("mouseenter", () => {
+if(!btn || !img || !video) return;
+
+btn.addEventListener("click", function(e){
+e.preventDefault();
+
 img.style.opacity = "0";
 video.style.opacity = "1";
-video.play();
-});
 
-container.addEventListener("mouseleave", () => {
-video.pause();
 video.currentTime = 0;
-video.style.opacity = "0";
-img.style.opacity = "1";
+video.play();
+
+setTimeout(()=>{
+window.location.href = "galeria.html";
+}, 900); // tempo da animação
+
 });
 
 });
