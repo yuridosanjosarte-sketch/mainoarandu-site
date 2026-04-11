@@ -84,6 +84,13 @@
   transform: translateY(-40px) rotate(20deg) scale(1.5);
   filter: blur(6px);
 }
+
+[vw] {
+  right: 15px !important;
+  bottom: 90px !important;
+  z-index: 9999;
+}
+    
   </style>
 </head>
 <body class="bg-gradient-to-b from-[#8B814C] to-[#ffffff] text-gray-800">
@@ -275,6 +282,9 @@
       </div>
 
       <p class="text-sm mb-6 max-w-md mx-auto">Educação e tecnologia unidas pela preservação das raízes brasileiras.</p>
+      <p class="text-xs mt-4">
+  Este site possui recurso de acessibilidade em Libras.
+</p>
       <div class="border-t border-gray-800 pt-6">
         <p class="text-xs">© 2026 Mainoarandu • Feito com respeito e propósito</p>
       </div>
@@ -349,6 +359,19 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 });
+</script>
+
+<!-- VLibras começa aqui -->
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
   
 </body>
