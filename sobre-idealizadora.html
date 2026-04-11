@@ -209,19 +209,20 @@
 <script>
 document.addEventListener("DOMContentLoaded", function(){
 
+const container = document.querySelector("#logoImg").parentElement;
 const img = document.getElementById("logoImg");
 const video = document.getElementById("logoVideo");
 
-if(!img || !video) return;
+if(!container || !img || !video) return;
 
-img.addEventListener("mouseenter", () => {
+container.addEventListener("mouseenter", () => {
 img.style.opacity = "0";
 video.style.opacity = "1";
 video.currentTime = 0;
 video.play();
 });
 
-video.addEventListener("mouseleave", () => {
+container.addEventListener("mouseleave", () => {
 video.pause();
 video.currentTime = 0;
 video.style.opacity = "0";
