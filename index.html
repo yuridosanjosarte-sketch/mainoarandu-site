@@ -418,46 +418,6 @@ window.location.href = href;
 </script>
 
   
- <script>
-const logo = document.querySelector('header img');
-
-const video = document.createElement("video");
-video.src = "mainolindinhovideo.mp4";
-video.className = logo.className;
-video.style.display = "none";
-video.playsInline = true;
-
-logo.parentNode.appendChild(video);
-
-let animando = false;
-
-document.addEventListener("click", function(e){
-
-const link = e.target.closest("a, button");
-if(!link) return;
-
-const href = link.getAttribute("href");
-if(!href) return;
-
-if(href.startsWith("#")) return;
-
-if(animando) return;
-animando = true;
-
-e.preventDefault();
-
-logo.style.display = "none";
-video.style.display = "block";
-
-video.currentTime = 0;
-video.play();
-
-video.onended = function(){
-window.location.href = href;
-};
-
-});
-</script> 
   
 </body>
 </html>
