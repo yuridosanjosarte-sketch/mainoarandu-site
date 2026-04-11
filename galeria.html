@@ -75,18 +75,18 @@
 
  <header class="bg-white backdrop-blur sticky top-0 z-50 shadow-sm">
 
-<div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-2">
+<div class="max-w-6xl mx-auto px-4 py-3">
 
-  <!-- LOGO -->
-  <div class="flex items-center relative h-10 md:h-14">
+  <!-- LOGO CENTRAL -->
+  <div class="flex justify-center relative h-12 md:h-14 mb-3">
     
     <img id="logoImg"
-         src="mainolindinho.jpeg" 
-         class="h-10 md:h-14 w-auto object-contain">
+         src="mainolindinho.jpeg"
+         class="h-12 md:h-14 w-auto object-contain">
 
     <video id="logoVideo"
            src="mainolindinhovideo.mp4"
-           class="h-10 md:h-14 w-auto object-contain absolute inset-0 hidden"
+           class="h-12 md:h-14 w-auto object-contain absolute inset-0 hidden"
            preload="auto"
            muted
            playsinline>
@@ -94,21 +94,28 @@
 
   </div>
 
-  <!-- MENU -->
-  <nav class="flex items-center space-x-4 md:space-x-8 text-gray-700 font-medium text-sm md:text-base">
+  <!-- BOTÕES -->
+  <nav class="
+  flex 
+  flex-col 
+  gap-2 
+  md:flex-row 
+  md:justify-center 
+  md:gap-4
+  ">
 
     <a href="index.html#inicio"
-       class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
+       class="w-full md:w-auto text-center bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
        Inicio
     </a>
 
     <a href="index.html#materiais"
-       class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
+       class="w-full md:w-auto text-center bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
        Arquivos
     </a>
 
     <a href="sobre-idealizadora.html"
-       class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
+       class="w-full md:w-auto text-center bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
        Sobre a idealizadora
     </a>
 
