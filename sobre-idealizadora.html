@@ -205,33 +205,6 @@ playsinline>
       imagem.style.transform = `translateY(${scrollY * 0.04}px) scale(1.01)`;
     });
   </script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-
-const btn = document.querySelector('a[href="galeria.html"]');
-const img = document.getElementById("logoImg");
-const video = document.getElementById("logoVideo");
-
-if(!btn || !img || !video) return;
-
-btn.addEventListener("click", function(e){
-e.preventDefault();
-
-img.style.opacity = "0";
-video.style.opacity = "1";
-
-video.currentTime = 0;
-video.play();
-
-setTimeout(()=>{
-window.location.href = "galeria.html";
-}, 900); // tempo da animação
-
-});
-
-});
-</script>
   
 <!-- VLibras -->
 <div vw class="enabled">
@@ -245,6 +218,45 @@ window.location.href = "galeria.html";
 <script>
   new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
-    
+
+  
+<script>
+const logoImg = document.getElementById("logoImg");
+const logoVideo = document.getElementById("logoVideo");
+
+let animando = false;
+
+document.addEventListener("click", function(e){
+
+const link = e.target.closest("a, button");
+if(!link) return;
+
+const href = link.getAttribute("href");
+if(!href) return;
+
+if(href.startsWith("#")) return;
+if(href.startsWith("http")) return;
+if(link.target === "_blank") return;
+
+if(animando) return;
+animando = true;
+
+e.preventDefault();
+
+logoImg.style.opacity = "0";
+
+logoVideo.classList.remove("hidden");
+logoVideo.style.display = "block";
+
+logoVideo.currentTime = 0;
+logoVideo.play();
+
+logoVideo.onended = function(){
+window.location.href = href;
+};
+
+});
+</script> 
+  
 </body>
 </html>
