@@ -96,21 +96,21 @@
   <nav class="max-w-6xl mx-auto flex justify-between items-center">
 
     <a href="index.html">
-      <div class="h-16 w-auto relative flex items-center justify-center">
+<div id="logoContainer" class="h-16 w-[160px] relative flex items-center">
 
-        <img id="logoImg"
-        src="mainolindinho.jpeg"
-        class="h-16 w-auto object-contain absolute transition duration-500">
+<img id="logoImg"
+src="mainolindinho.jpeg"
+class="h-16 w-auto object-contain absolute left-0 top-0 transition duration-300">
 
-        <video id="logoVideo"
-        src="mainolindinhovideo.mp4"
-        class="h-16 w-auto object-contain absolute opacity-0"
-        muted
-        playsinline>
-        </video>
+<video id="logoVideo"
+src="mainolindinhovideo.mp4"
+class="h-16 w-auto object-contain absolute left-0 top-0 opacity-0"
+muted
+playsinline>
+</video>
 
-      </div>
-    </a>
+</div>
+</a>
 
     <a href="galeria.html"
       class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
@@ -209,16 +209,13 @@
 <script>
 document.addEventListener("DOMContentLoaded", function(){
 
-const container = document.querySelector("#logoImg").parentElement;
+const container = document.getElementById("logoContainer");
 const img = document.getElementById("logoImg");
 const video = document.getElementById("logoVideo");
-
-if(!container || !img || !video) return;
 
 container.addEventListener("mouseenter", () => {
 img.style.opacity = "0";
 video.style.opacity = "1";
-video.currentTime = 0;
 video.play();
 });
 
