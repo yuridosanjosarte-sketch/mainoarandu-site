@@ -103,13 +103,22 @@
             
         </nav>
 
-        <div class="order-1 md:order-2">
-            <a href="index.html">
-                <img src="mainolindinho.jpeg" alt="quadradinhoana.jpeg" class="h-12 md:h-16 w-auto object-contain">
-            </a>
-        </div>
+       <div class="order-1 md:order-2">
+  <div class="h-12 md:h-16 w-auto">
+    
+    <img id="logoImg"
+         src="mainolindinho.jpeg"
+         alt="quadradinhoana.jpeg"
+         class="h-12 md:h-16 w-auto object-contain">
 
-       <div class="order-3">
+    <video id="logoVideo"
+           src="mainolindinhovideo.mp4"
+           class="h-12 md:h-16 w-auto object-contain hidden"
+           playsinline>
+    </video>
+
+  </div>
+</div>
   <a href="saiba-mais.htm" 
      class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
      Saiba mais
@@ -363,6 +372,38 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
+<script>
+const logoImg = document.getElementById("logoImg");
+const logoVideo = document.getElementById("logoVideo");
+
+let animando = false;
+
+document.addEventListener("click", function(e){
+
+const link = e.target.closest("a, button");
+if(!link) return;
+
+const href = link.getAttribute("href");
+if(!href) return;
+
+if(animando) return;
+animando = true;
+
+e.preventDefault();
+
+logoImg.classList.add("hidden");
+logoVideo.classList.remove("hidden");
+
+logoVideo.currentTime = 0;
+logoVideo.play();
+
+logoVideo.onended = function(){
+window.location.href = href;
+};
+
+});
+</script>
+  
 <!-- VLibras começa aqui -->
 <div vw class="enabled">
   <div vw-access-button class="active"></div>
