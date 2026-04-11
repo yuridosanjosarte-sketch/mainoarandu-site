@@ -113,11 +113,13 @@
          class="h-12 md:h-16 w-auto object-contain">
 
     <video id="logoVideo"
-           src="mainolindinhovideo.mp4"
-           class="h-12 md:h-16 w-auto object-contain absolute inset-0 hidden"
-           playsinline>
+       src="mainolindinhovideo.mp4"
+       class="h-12 md:h-16 w-auto object-contain absolute inset-0 hidden"
+       preload="auto"
+       muted
+       playsinline>
     </video>
-
+    
   </div>
     </div>
 
@@ -394,21 +396,30 @@ if(!link) return;
 const href = link.getAttribute("href");
 if(!href) return;
 
+if(href.startsWith("#")) return;
+if(href.startsWith("http")) return;
+if(link.target === "_blank") return;
+
 if(animando) return;
 animando = true;
 
 e.preventDefault();
 
-// esconde imagem
+// força carregamento imediato
+logoVideo.load();
+
+// troca imagem → video
 logoImg.style.opacity = "0";
-
-// mostra vídeo corretamente
 logoVideo.classList.remove("hidden");
-logoVideo.style.display = "block";
-logoVideo.style.opacity = "1";
 
+// play imediato
 logoVideo.currentTime = 0;
-logoVideo.play();
+
+const playPromise = logoVideo.play();
+
+if(playPromise !== undefined){
+playPromise.then(()=>{}).catch(()=>{});
+}
 
 logoVideo.onended = function(){
 window.location.href = href;
