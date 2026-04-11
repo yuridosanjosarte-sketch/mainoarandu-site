@@ -102,23 +102,25 @@
     <!-- espaço vazio esquerda -->
     <div></div>
 
-    <div class="flex justify-center mb-3">
+    <!-- LOGO CENTRAL -->
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4 relative">
+
+  <!-- LOGO -->
+  <div class="flex items-center relative h-12 md:h-16">
     
-    <div class="relative h-12 md:h-14 flex items-center justify-center">
+    <img id="logoImg"
+         src="mainolindinho.jpeg" 
+         class="h-12 md:h-16 w-auto object-contain">
 
-      <img id="logoImg"
-           src="mainolindinho.jpeg"
-           class="h-12 md:h-14 w-auto object-contain transition">
-
-      <video id="logoVideo"
-             src="mainolindinhovideo.mp4"
-             class="h-12 md:h-14 w-auto object-contain absolute top-0 left-1/2 -translate-x-1/2 hidden"
-             preload="auto"
-             muted
-             playsinline>
-      </video>
-
-    </div>
+    <video id="logoVideo"
+       src="mainolindinhovideo.mp4"
+       class="h-12 md:h-16 w-auto object-contain absolute inset-0 hidden"
+       preload="auto"
+       muted
+       playsinline>
+    </video>
+    
+  </div>
     </div>
 
   </div>
