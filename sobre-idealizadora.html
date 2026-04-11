@@ -93,17 +93,32 @@
 <body class="text-[#6b5440] min-h-screen">
 
   <header class="w-full py-6 px-8 backdrop-blur-md bg-white/80 shadow-sm sticky top-0 z-50">
-    <nav class="max-w-6xl mx-auto flex justify-between items-center">
+  <nav class="max-w-6xl mx-auto flex justify-between items-center">
 
-      <img src="mainolindinho.jpeg" alt="Logo da Galeria"
-        class="h-16 w-auto transition duration-500 hover:scale-105">
+    <a href="index.html">
+      <div class="h-16 w-auto relative flex items-center justify-center">
 
-      <a href="galeria.html"
-        class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
-     Voltar para Galeria
-      </a>
-    </nav>
-  </header>
+        <img id="logoImg"
+        src="mainolindinho.jpeg"
+        class="h-16 w-auto object-contain absolute transition duration-500">
+
+        <video id="logoVideo"
+        src="mainolindinhovideo.mp4"
+        class="h-16 w-auto object-contain absolute opacity-0"
+        muted
+        playsinline>
+        </video>
+
+      </div>
+    </a>
+
+    <a href="galeria.html"
+      class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
+      Voltar para Galeria
+    </a>
+
+  </nav>
+</header>
 
   <main class="max-w-6xl mx-auto px-6 py-20">
 
@@ -191,6 +206,31 @@
     });
   </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+const img = document.getElementById("logoImg");
+const video = document.getElementById("logoVideo");
+
+if(!img || !video) return;
+
+img.addEventListener("mouseenter", () => {
+img.style.opacity = "0";
+video.style.opacity = "1";
+video.currentTime = 0;
+video.play();
+});
+
+video.addEventListener("mouseleave", () => {
+video.pause();
+video.currentTime = 0;
+video.style.opacity = "0";
+img.style.opacity = "1";
+});
+
+});
+</script>
+  
 <!-- VLibras -->
 <div vw class="enabled">
   <div vw-access-button class="active"></div>
