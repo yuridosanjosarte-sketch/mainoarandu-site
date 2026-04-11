@@ -6,7 +6,7 @@
   <title>Sobre a Idealizadora</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- FONT AWESOME (faltava isso pros ícones aparecerem) -->
+  <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
@@ -39,7 +39,7 @@
       backdrop-filter: blur(14px);
     }
 
-    /* Redes sociais (ARRUMADO) */
+    /* REDES SOCIAIS GOLD PREMIUM */
     .social-container {
       display: flex;
       justify-content: center;
@@ -49,19 +49,17 @@
     }
 
     .icon-social {
-      font-size: 24px;
-      color: #9ca3af;
+      font-size: 26px;
+      background: linear-gradient(45deg, #C9A227, #FFD700, #FFF5B7, #C9A227);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       transition: all 0.3s ease;
     }
 
     .icon-social:hover {
-      transform: translateY(-5px);
+      transform: translateY(-5px) scale(1.1);
+      filter: brightness(1.2);
     }
-
-    .fa-instagram:hover { color: #d6249f; }
-    .fa-youtube:hover { color: #FF0000; }
-    .fa-facebook:hover { color: #1877F2; }
-    .fa-pinterest:hover { color: #E60023; }
 
     /* Libras */
     [vw] {
@@ -75,7 +73,6 @@
 
 <body class="text-[#6b5440] min-h-screen">
 
-  <!-- Header -->
   <header class="w-full py-6 px-8 backdrop-blur-md bg-white/80 shadow-sm sticky top-0 z-50">
     <nav class="max-w-6xl mx-auto flex justify-between items-center">
 
@@ -89,7 +86,6 @@
     </nav>
   </header>
 
-  <!-- Conteúdo -->
   <main class="max-w-6xl mx-auto px-6 py-20">
 
     <section class="glass-card rounded-[2rem] shadow-2xl p-8 md:p-14 border border-white">
@@ -150,7 +146,7 @@
       </div>
     </section>
 
-    <!-- REDES SOCIAIS (ARRUMADO E CENTRALIZADO) -->
+    <!-- REDES SOCIAIS GOLD -->
     <div class="social-container">
       <a href="https://instagram.com/seuusuario" target="_blank" class="icon-social"><i class="fab fa-instagram"></i></a>
       <a href="https://youtube.com/seucanal" target="_blank" class="icon-social"><i class="fab fa-youtube"></i></a>
@@ -158,7 +154,6 @@
       <a href="https://pin.it/Hh51yHD0O" target="_blank" class="icon-social"><i class="fab fa-pinterest"></i></a>
     </div>
 
-    <!-- TEXTO FINAL -->
     <p class="text-sm mb-6 max-w-md mx-auto text-center">
       Educação e tecnologia unidas pela preservação das raízes brasileiras.
     </p>
@@ -180,7 +175,7 @@
   <!-- VLibras -->
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
+    <div vw-plugin-wrapper">
       <div class="vw-plugin-top-wrapper"></div>
     </div>
   </div>
