@@ -73,38 +73,47 @@
 </head>
 <body class="text-gray-800">
 
-  <header class="bg-white/90 backdrop-blur sticky top-0 z-50 shadow-sm">
+ <header class="bg-white/90 backdrop-blur sticky top-0 z-50 shadow-sm">
 
-<div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+<div class="max-w-6xl mx-auto flex items-center justify-between p-4 relative">
 
-  <!-- LOGO ESQUERDA -->
-  <div class="flex items-center">
-    <a href="index.html">
-      <img src="mainolindinho.jpeg" 
-           alt="quadradinhoana.jpeg" 
-           class="h-12 md:h-16 w-auto object-contain">
-    </a>
+  <!-- LOGO -->
+  <div class="flex items-center relative h-12 md:h-16">
+    
+    <img id="logoImg"
+         src="mainolindinho.jpeg" 
+         class="h-12 md:h-16 w-auto object-contain">
+
+    <video id="logoVideo"
+           src="mainolindinhovideo.mp4"
+           class="h-12 md:h-16 w-auto object-contain absolute inset-0 hidden"
+           playsinline>
+    </video>
+
   </div>
 
-  <!-- MENU DIREITA -->
+  <!-- MENU -->
   <nav class="flex items-center space-x-4 md:space-x-8 text-gray-700 font-medium text-sm md:text-base">
-    <a href="index.html#inicio" class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
- Inicio
-</a>
 
-    <a href="index.html#materiais" class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
-     Arquivos
+    <a href="index.html#inicio"
+       class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
+       Inicio
+    </a>
+
+    <a href="index.html#materiais"
+       class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
+       Arquivos
     </a>
 
     <a href="sobre-idealizadora.html"
        class="inline-block bg-[#B8860B] hover:bg-[#FFD700] text-white px-4 py-2 rounded-full shadow-xl transition transform hover:scale-105 font-bold uppercase tracking-wider text-sm">
-     Sobre a idealizadora
+       Sobre a idealizadora
     </a>
+
   </nav>
 
 </div>
-    
-  </header>
+</header>
 
   <section class="py-12 md:py-20 bg-[#f5e1ce]/30 text-center px-4">
     <div class="max-w-4xl mx-auto fade-in">
@@ -204,6 +213,46 @@
 <script>
   new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
-    
+
+  
+<script>
+const logoImg = document.getElementById("logoImg");
+const logoVideo = document.getElementById("logoVideo");
+
+let animando = false;
+
+document.addEventListener("click", function(e){
+
+const link = e.target.closest("a, button");
+if(!link) return;
+
+const href = link.getAttribute("href");
+if(!href) return;
+
+if(href.startsWith("#")) return;
+if(href.startsWith("http")) return;
+if(link.target === "_blank") return;
+
+if(animando) return;
+animando = true;
+
+e.preventDefault();
+
+logoImg.style.opacity = "0";
+
+logoVideo.classList.remove("hidden");
+logoVideo.style.display = "block";
+
+logoVideo.currentTime = 0;
+logoVideo.play();
+
+logoVideo.onended = function(){
+window.location.href = href;
+};
+
+});
+</script> 
+
+  
 </body>
 </html>
