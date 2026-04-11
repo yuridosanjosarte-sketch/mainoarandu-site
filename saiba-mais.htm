@@ -12,6 +12,13 @@
 body{
 background: linear-gradient(135deg,#fdf8f3 0%,#f6efe7 100%);
 }
+
+/* posição libras */
+[vw]{
+right:15px !important;
+bottom:90px !important;
+z-index:9999;
+}
 </style>
 
 </head>
@@ -82,6 +89,19 @@ Este site possui recurso de acessibilidade em Libras.
 </div>
 
 </footer>
+
+<!-- VLibras -->
+<div vw class="enabled">
+<div vw-access-button class="active"></div>
+<div vw-plugin-wrapper>
+<div class="vw-plugin-top-wrapper"></div>
+</div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
 
 </body>
 </html>
