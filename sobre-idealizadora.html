@@ -39,27 +39,46 @@
       backdrop-filter: blur(14px);
     }
 
-    /* REDES SOCIAIS GOLD PREMIUM */
-    .social-container {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 40px;
-      margin-bottom: 10px;
-    }
+    /* REDES SOCIAIS GOLD CLÁSSICO */
+.social-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
 
-    .icon-social {
-      font-size: 26px;
-      background: linear-gradient(45deg, #C9A227, #FFD700, #FFF5B7, #C9A227);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      transition: all 0.3s ease;
-    }
+.icon-social {
+  font-size: 26px;
+  color: #D4AF37; /* gold clássico */
+  transition: all 0.3s ease;
+}
 
-    .icon-social:hover {
-      transform: translateY(-5px) scale(1.1);
-      filter: brightness(1.2);
-    }
+.icon-social:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* CORES ORIGINAIS NO HOVER */
+.icon-social .fa-instagram:hover {
+  background: radial-gradient(circle at 30% 107%, 
+    #fdf497 0%, #fdf497 5%, 
+    #fd5949 45%, #d6249f 60%, 
+    #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.icon-social .fa-youtube:hover {
+  color: #FF0000;
+}
+
+.icon-social .fa-facebook:hover {
+  color: #1877F2;
+}
+
+.icon-social .fa-pinterest:hover {
+  color: #E60023;
+}
 
     /* Libras */
     [vw] {
